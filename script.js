@@ -11,9 +11,11 @@ let notFound = (function(){
         if (!executed) {
             executed = true;
             let notFoundMessage = document.createElement("li");
-            searchForm.appendChild(notFoundMessage);
+            list.appendChild(notFoundMessage);
             notFoundMessage.textContent = "nothing found";
             notFoundMessage.classList.add("not-found");
+        } else {
+            notFoundMessage.classList.add("found");
         }
     }
 })();
@@ -28,7 +30,7 @@ searchList.addEventListener("keyup", function(ev){
             item.style.display = "block";
         } else {
             item.style.display = "none";
-            notFound();
+            // notFound();
         }
     })
 }); 
